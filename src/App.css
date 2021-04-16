@@ -1,38 +1,151 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --primary-color: #5e62b7;
+    --income-color: #2ecc71;
+    --expense-color: #c0392b;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f7f7f7;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+    margin: 30px auto;
+    width: 350px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header {
+    margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.title-header {
+    text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h4, .balance {
+    margin: 0 auto;
+}
+
+.inc-exp-container {
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: var(--box-shadow);
+}
+
+.inc-exp-container > div {
+    flex: 1;
+    text-align: center;
+}
+  
+.inc-exp-container > div:first-of-type {
+    border-right: 1px solid #dedede;
+}
+
+.inc-exp-container p {
+    margin: 5px 0;
+    font-size: 22px;
+}
+
+.inc-exp-container > div .plus {
+    color: var(--income-color);
+}
+
+.inc-exp-container > div .minus {
+    color: var(--expense-color);
+}
+
+.transation-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.transation-list ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-right: 6px solid transparent;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.transation-list ul li span {
+    line-height: 52px;
+}
+
+.transation-list ul li span.amount {
+    margin: 0 10px;
+}
+
+.transation-list ul li span i {
+    cursor: pointer;
+    margin-right: 15px;
+    line-height: 52px;
+    background-color: var(--primary-color);
+    padding: 0 10px;
+    color: white;
+}
+
+.transation-list .alert {
+    padding: 10px;
+    background-color: #d6d6eb;
+    text-align: center;
+}
+
+.income {
+    border-color: var(--income-color) !important;
+}
+
+.expense {
+    border-color: var(--expense-color) !important;
+}
+
+form .form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+form .form-control label {
+    margin-bottom: 10px;
+}
+
+form .form-control input {
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+    padding: 10px;
+}
+
+form .form-control .input-error {
+    color: var(--expense-color);
+}
+
+form .form-control input:focus {
+    outline: none;
+}
+
+form .form-control button {
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: all .4s ease;
+    font-size: 18px;
+}
+
+form .form-control button:hover {
+    background-color: #30336b;
+}
+
+form .form-control input,
+form .form-control button {
+    font-size: 18px;
 }
